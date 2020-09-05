@@ -134,7 +134,7 @@
   * `docker version >= 19`
   * `docker-compose version >= 1.26 `
   
-  ** .env variables ** <br />
+  **Definitions of .env variables** <br />
   * `REDIS_HOST` - redis ip addr
   * `REDIS_PORT` - redis available port
   * `REFRESH_TIMEOUT` - the parameter for the crawler service, for refresh all valid flights
@@ -158,4 +158,3 @@
   There may be errors with importing modules while running python modules,
    if you have custom PYTHONPATH values(try fix it, if it happened) <br />
   Make sure, that Redis Cache Server is available <br />
-  
