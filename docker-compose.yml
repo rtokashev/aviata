@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  redis:
+    restart: always
+    image: redis:latest
+    networks:
+      app_net:
+        ipv4_address: 192.168.15.200
+    ports:
+      - "6379:6379"
+
+  api:
+    restart: on-failure
+    build: .
+    command: python aviata/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    env_file:
+      - .env
+    networks:
+      app_net:
+        ipv4_address: 192.168.15.10
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+  crawler:
+    restart: on-failure
+    build: .
+    env_file:
+      - .env
+    command: python main.py
+    networks:
+      app_net:
+        ipv4_address: 192.168.15.11
+    depends_on:
+      - redis
+
+networks:
+  app_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.15.0/24
