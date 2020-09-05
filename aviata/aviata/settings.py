@@ -24,7 +24,7 @@ SECRET_KEY = 'js+&b$y1_75!mqwdj%wo6w9vac-*uyonb*r96^_$fby7sdva6z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.15.10']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', '192.168.15.10']
 
 # Application definition
 
@@ -85,7 +85,7 @@ CACHES = {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         }
     }
-}
+}  # No used at project
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
