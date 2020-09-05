@@ -103,7 +103,7 @@
     ```json
     {"data": "flights for ALA-UID direction no in the cache"}
     ```
-  
+* **Error Response:**
   * **Code:** 400 <br />
     **Content:**
     ```json
@@ -152,6 +152,7 @@
   * `export REDIS_PORT=YOUR_REDIS_PORT`
   * `export REFRESH_TIMEOUT=REFRESH_TIMEOUT`
   * `cd project`
+  * create virtual environment for python and install dependencies via `pip install -r requirements.txt`
   * `python aviata/manage.py runserver` for run API
   * `python flights/main.py` for run crawler
   
